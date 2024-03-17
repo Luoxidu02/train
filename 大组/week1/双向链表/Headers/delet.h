@@ -1,11 +1,11 @@
 line * delet(line * head) {  
     int data;  
-    printf("ÇëÊäÈëÄãÒªÉ¾³ıµÄÔªËØ:");  
+    printf("è¯·è¾“å…¥ä½ è¦åˆ é™¤çš„å…ƒç´ :");  
     scanf("%d", &data);  
     line * current = head;  
     line * temp;  
   
-    // ´¦ÀíÍ·½Úµã  
+    // å¤„ç†å¤´èŠ‚ç‚¹  
     while (current && current->data == data) {  
         temp = current;  
         head = current->next;  
@@ -13,11 +13,11 @@ line * delet(line * head) {
             head->pre = NULL;  
         }  
         free(temp);  
-        printf("--É¾³ı³É¹¦--\n");  
+        printf("--åˆ é™¤æˆåŠŸ--\n");  
         current = head;  
     }  
   int t=0; 
-    // ´¦ÀíÁ´±íÖĞ¼ä½Úµã  
+    // å¤„ç†é“¾è¡¨ä¸­é—´èŠ‚ç‚¹  
     while (current) {  
         if (current->next && current->next->data == data) {  
             temp = current->next;  
@@ -26,27 +26,27 @@ line * delet(line * head) {
                 current->next->pre = current;  
             }  
             free(temp);  
-            printf("--É¾³ı³É¹¦--\n"); 
+            printf("--åˆ é™¤æˆåŠŸ--\n"); 
 			t=1; 
         } else {  
             current = current->next;  
         }  
     }  
   
-    // ´¦ÀíÎ²½Úµã  
+    // å¤„ç†å°¾èŠ‚ç‚¹  
     if (head && !head->next && head->data == data) {  
         free(head);  
         head = NULL;  
-        printf("--É¾³ı³É¹¦--\n");  
+        printf("--åˆ é™¤æˆåŠŸ--\n");  
     }  
   
     if (!head) {  
-        printf("Á´±íÎª¿Õ\n");  
+        printf("é“¾è¡¨ä¸ºç©º\n");  
     } else {  
         if (current == NULL&&t==0) {  
-            printf("Error:Ã»ÓĞÕÒµ½¸ÃÔªËØ£¬Ã»ÓĞ²úÉúÉ¾³ı\n");  
+            printf("Error:æ²¡æœ‰æ‰¾åˆ°è¯¥å…ƒç´ ï¼Œæ²¡æœ‰äº§ç”Ÿåˆ é™¤\n");  
         }  
     }  
-    system("pause"); // Èç¹û»·¾³Ö§³Ö£¬·ñÔò¿ÉÌæ»»ÎªÆäËû·½·¨  
+    system("pause");  
     return head;  
 }
